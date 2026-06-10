@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Nueva Reserva</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<h1>Crear Reserva</h1>
+
+<form id="reservaForm">
+
+    <input
+        type="number"
+        id="cancha_id"
+        placeholder="ID Cancha"
+        required
+    >
+
+    <input
+        type="date"
+        id="fecha"
+        required
+    >
+
+    <input
+        type="time"
+        id="hora_inicio"
+        required
+    >
+
+    <input
+        type="time"
+        id="hora_fin"
+        required
+    >
+
+    <input
+        type="number"
+        id="precio_total"
+        placeholder="Precio"
+        required
+    >
+
+    <button type="submit">
+        Reservar
+    </button>
+
+</form>
+
+<script src="../js/reserva.js"></script>
+
+</body>
+</html>

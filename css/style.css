@@ -1,0 +1,23 @@
+body{
+    font-family: Arial;
+    margin:40px;
+}
+
+input{
+    display:block;
+    margin-bottom:10px;
+    padding:8px;
+    width:250px;
+}
+
+button{
+    padding:10px;
+}
+
+table{
+    border-collapse:collapse;
+}
+
+td,th{
+    padding:8px;
+}
