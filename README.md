@@ -116,6 +116,6 @@ Abrir `client/pages/index.html` en un navegador, o usar Live Server en VS Code.
 
 ## Autor
 
-- **Alumno**: [Tu nombre]
-- **Proyecto**: #11 — Reserva de Canchas
-- **Curso**: Desarrollo Web
+- Alumno: David Soto
+- Proyecto: #11 — Reserva de Canchas
+- Curso: Desarrollo Web
