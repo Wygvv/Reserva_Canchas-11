@@ -5,6 +5,7 @@ const reservaController = require('../controllers/reservaController');
 const auth = require('../middleware/authMiddleware');
 
 router.get('/', auth, reservaController.obtenerTodas);
+router.get('/stats', auth, reservaController.estadisticas);
 router.get('/:id', auth, reservaController.obtenerPorId);
 
 router.post('/', auth, reservaController.crear);

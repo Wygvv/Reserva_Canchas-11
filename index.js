@@ -7,9 +7,10 @@ const cors    = require('cors');
 const sequelize = require('./config/sequelize');
 
 const app  = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // ── Middlewares globales ──────────────────────────────────
+console.log('CLIENT_URL =', process.env.CLIENT_URL);
 app.use(cors({ origin: process.env.CLIENT_URL || '*' }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

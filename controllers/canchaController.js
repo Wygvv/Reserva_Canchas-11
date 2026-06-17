@@ -18,6 +18,32 @@ exports.obtenerPorId = async (req, res) => {
 };
 
 exports.crear = async (req, res) => {
+  const {
+  nombre,
+  tipo,
+  precio_hora
+} = req.body
+
+if (!nombre || nombre.trim() === '') {
+  return res.status(400).json({
+    mensaje: 'Nombre obligatorio'
+  })
+}
+
+if (!tipo) {
+  return res.status(400).json({
+    mensaje: 'Tipo obligatorio'
+  })
+}
+
+if (
+  !precio_hora ||
+  precio_hora <= 0
+) {
+  return res.status(400).json({
+    mensaje: 'Precio inválido'
+  })
+}
   const cancha = await Cancha.create(req.body);
 
   res.status(201).json(cancha);
