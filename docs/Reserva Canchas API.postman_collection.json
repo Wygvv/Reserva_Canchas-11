@@ -1,0 +1,303 @@
+{
+  "info": {
+    "_postman_id": "6b6b0838-81a4-4ed2-8dcc-f1c6d8758af2",
+    "name": "Reserva Canchas API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54112399",
+    "_collection_link": "https://go.postman.co/collection/54112399-6b6b0838-81a4-4ed2-8dcc-f1c6d8758af2?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Registro usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Usuario Test\",\r\n  \"email\": \"test@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Usuario",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"david@gmail.com\",\r\n  \"password\": \"12345678\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Canchas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3001/api/canchas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "canchas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Cancha",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0zpl}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Cancha Postman\",\r\n  \"tipo\": \"futbol\",\r\n  \"precio_hora\": 20000\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/canchas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "canchas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Crear Reserva",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{supabase_service_role_api_key_0zpl}}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cancha_id\": 1,\r\n  \"fecha\": \"2026-10-20\",\r\n  \"hora_inicio\": \"16:00\",\r\n  \"hora_fin\": \"17:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Listar Reservas",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "Eliminar Reserva",
+      "request": {
+        "method": "DELETE",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "bearer {{supabase_service_role_api_key_0zpl}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3001/api/reservas/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "reservas",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login Incorrecto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"email\": \"usuario_inexistente@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Reserva Fecha Pasada",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "{{bearer_token_1af0 }}",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"cancha_id\": 1,\r\n  \"fecha\": \"2020-01-01\",\r\n  \"hora_inicio\": \"16:00\",\r\n  \"hora_fin\": \"17:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3001/api/reservas",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3001",
+          "path": [
+            "api",
+            "reservas"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": ""
+    },
+    {
+      "key": "supabase_service_role_api_key_0zpl",
+      "secret": true
+    },
+    {
+      "key": "bearer_token_1af0",
+      "secret": true
+    },
+    {
+      "key": "json_web_token_0zpl",
+      "secret": true
+    }
+  ]
+}
